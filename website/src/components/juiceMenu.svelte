@@ -3,7 +3,7 @@
 
     function trimText(text: string) {
         /* Trims down text to the first 60 characters */
-        return text.substring(0, 60) + "...";
+        return text.substring(0, 60);
     }
 </script>
 
@@ -12,20 +12,19 @@
         <div class="juice-card">
             <img class="juice-image" src={juice.image} alt={juice.name}>
             <h3 class="text-xl mt-3 mb-4 font-medium">{juice.name}</h3>
-            <p class="max-w-[80%] text-center">{trimText(juice.description)}</p>
+            <p class="max-w-[80%] max-h-[48px] text-left overflow-y-hidden mb-4">{trimText(juice.description)}...</p>
 
-            
+            <p>Rs. {juice.price}</p>
         </div>
     {/each}
 </div>
 
 <style lang="postcss">
     .juice-menu-grid {
-		@apply grid gap-8 gap-x-6 md:gap-x-14 overflow-y-auto mt-8
-                justify-center;
-		max-width: 100%; /* DON'T TOUCH THIS!, WITHOUT THIS THE auto-fit DOESN'T WORK FOR SOME REASON */
+		@apply grid gap-8 gap-x-6 md:gap-x-14 overflow-y-auto justify-center;
+		max-width: 100%;
 
-		grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
     }
 
     .juice-card {

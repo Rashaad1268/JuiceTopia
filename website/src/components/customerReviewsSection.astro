@@ -1,0 +1,23 @@
+---
+import CustomerReview from "./customerReview.astro";
+---
+
+<div class="customer-reviews">
+    <CustomerReview name="Micheal Jordan" content="East or West, JuiceTopia is the best" occupation="Professional Basketball Player" image="/customers/micheal-jordan.jpeg" />
+    <CustomerReview name="The Rock" content="East or West, JuiceTopia is the best" occupation="Hollywood Actor" image="/customers/the-rock.jpeg" />
+    <CustomerReview name="Elon Musk" content="East or West, JuiceTopia is the best" occupation="Engineer" image="/customers/elon-musk.jpeg" />
+    <CustomerReview name="Magnus Carlsen" content="East or West, JuiceTopia is the best" occupation="Professional Chess Player" image="/customers/magnus-carlsen.jpeg" />
+</div>
+
+<style>
+    .customer-reviews {
+        @apply flex gap-2 flex-wrap justify-evenly gap-y-4 m-4;
+    }
+
+    /* If the screen width is 1080px or smaller */
+    @media (min-width: 1080px) {
+        .customer-reviews {
+            @apply justify-evenly;
+        }
+    }
+</style>

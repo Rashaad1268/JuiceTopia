@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import JuiceMenu from "../components/juiceMenu.svelte"
+import CustomerReviews from "../components/customerReviewsSection.astro"
 ---
 
 <Layout title="Welcome to JuiceTopia">
@@ -14,9 +15,14 @@ import JuiceMenu from "../components/juiceMenu.svelte"
     </section>
 
     <section>
-      <h1 class="title-text">Menu</h1>
+      <h1 class="title-text text-center mb-14" id="menu">Menu</h1>
 	  <JuiceMenu />
     </section>
+
+	<section>
+		<h1 class="title-text ml-5 mb-8" id="reviews">Customer Reviews</h1>
+		<CustomerReviews />
+	</section>
   </main>
 </Layout>
 
@@ -33,7 +39,7 @@ import JuiceMenu from "../components/juiceMenu.svelte"
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
   }
 
   .text-shadow {

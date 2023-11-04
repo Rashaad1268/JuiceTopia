@@ -1,0 +1,49 @@
+---
+const { image, content, name, occupation } = Astro.props;
+---
+
+<figure class="flex rounded-lg bg-neutral-800 pt-0 lg:w-[470px]">
+  <img
+    src={image}
+    alt={name}
+  />
+
+  <div class="review-body">
+    <blockquote class="text-lg mb-2">"{content}"</blockquote>
+
+    <figcaption class="font-medium break-keep">
+      <p class="text-sky-400">
+        {name}
+      </p>
+
+      <p class="text-slate-400">
+        {occupation}
+      </p>
+    </figcaption>  </div>
+</figure>
+
+<style>
+  img {
+    /* Desktop and global styles of the image */
+    @apply w-36 rounded-l-lg object-cover;
+  }
+
+  .review-body {
+    @apply flex flex-col text-left p-3 lg:p-6;
+  }
+  
+  @media (max-width: theme("screens.lg")) {
+    /* Mobile styles */
+    img {
+      @apply w-32 h-32 aspect-square rounded-full mx-auto;
+    }
+
+    figure {
+      @apply flex-col w-[360px];
+    }
+
+    .review-body {
+      @apply text-center;
+    }
+  }
+</style>

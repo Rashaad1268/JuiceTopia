@@ -3,7 +3,7 @@ import logoImage from "../../public/logo.png";
 import { Image } from "astro:assets";
 ---
 
-<nav class="sticky bg-neutral-800 z-[9999] rounded-xl -mb-3 mt-3 mx-[5px]">
+<nav class="sticky top-0 bg-neutral-800 z-[9999] rounded-xl shadow-xl -mb-3 mt-3 mx-[5px]">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <div
@@ -11,13 +11,15 @@ import { Image } from "astro:assets";
       >
         <div class="flex flex-shrink-0 items-center">
           <!-- Logo -->
-          <Image class="h-8 w-auto" src={logoImage} alt="JuiceTopia logo" />
+          <a href="/" aria-label="Home page">
+            <Image class="h-8 w-auto" src={logoImage} alt="JuiceTopia logo" />
+          </a>
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="nav-links">
             <!-- Navigation bar links -->
-            <a aria-label="Learn a bit about ourselves" href="/#about">About</a>
             <a aria-label="View menu" href="/#menu">Menu</a>
+            <a aria-label="View customer reviews" href="/#reviews">Customer Reviews</a>
             <a aria-label="Contact us" href="/#contact">Contact</a>
           </div>
         </div>
@@ -45,7 +47,7 @@ import { Image } from "astro:assets";
 
 <style>
   .nav-links {
-    @apply flex space-x-4;
+    @apply flex space-x-5;
   }
 
   .nav-links > a {
