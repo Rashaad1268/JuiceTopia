@@ -2,7 +2,7 @@
     import {juices} from "../lib/data";
 
     function trimText(text: string) {
-        /* Trims down text to the first 50 characters */
+        /* Trims down text to the first 60 characters */
         return text.substring(0, 60) + "...";
     }
 </script>
