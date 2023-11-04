@@ -6,7 +6,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				agbalumo: ['Agbalumo']
+				agbalumo: ['Agbalumo', ...defaultTheme.fontFamily.sans]
 			  },
 		},
 	},
