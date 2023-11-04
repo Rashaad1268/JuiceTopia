@@ -51,6 +51,7 @@ export function createOrder(newOrder: JuiceOrderInterface) {
 
     // Add the new order to the list of exsiting orders
     orders.push(newOrder);
+    console.log('orders', newOrder)
 
     // Update the localStorage
     localStorage['orders'] = JSON.stringify(orders);

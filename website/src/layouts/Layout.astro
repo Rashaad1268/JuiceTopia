@@ -1,6 +1,6 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
 }
 
 const { title } = Astro.props;
@@ -8,17 +8,22 @@ import { ViewTransitions } from "astro:transitions";
 
 import NavBar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
+
+const description = `
+Enjoy the freshest and most delicious juices, smoothies,
+and bowls, all made with the finest Sri Lankan fruits.
+JuiceTopia is your one-stop shop for all things juicy, refreshing, and healthy.
+`.trim();
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{title || "JuiceTopia"}</title>
 
     <ViewTransitions />
   </head>
