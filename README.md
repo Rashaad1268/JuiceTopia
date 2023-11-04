@@ -1,7 +1,7 @@
 
-# Team name: Rectifiers
+# Team Rectifiers
 
-# Team
+# Team Members
 
 - Aditha Geeganage
 - Dasindu Suwahas
@@ -16,4 +16,6 @@ Made using the [Astro framework](https://astro.build/)
 
 The source code is in the `/website` folder
 
-Setup instructions are included in the [`website/README.md`](website/README.md) file
+Setup instructions are in the [`website/README.md`](website/README.md) file
+
+# Citations
