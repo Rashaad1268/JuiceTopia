@@ -8,6 +8,8 @@
 - Thavindu Muthumala
 - Rashaad Akbar
 
+## Website url: https://juice-topia.vercel.app/
+
 # Project information
 
 Made using the [Astro framework](https://astro.build/)
