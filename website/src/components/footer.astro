@@ -1,2 +1,33 @@
 <footer>
-</footer>
+    <nav>
+        <header class="footer-title">Services</header> 
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+      </nav> 
+      <nav>
+        <header class="footer-title">Company</header> 
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+      </nav> 
+    </footer>
+
+<style>
+  footer {
+    @apply grid w-full grid-flow-row rounded bg-zinc-900
+           place-items-start gap-x-4 gap-y-6 p-10;
+  }
+
+  footer > * {
+    @apply grid place-items-start gap-2;
+  }
+
+  @media (min-width: 48rem) {
+    footer {
+      grid-auto-flow: column;
+    }
+  }
+</style>
