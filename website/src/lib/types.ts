@@ -2,6 +2,7 @@ export interface JuiceInterface {
     id: number;
     name: string;
     description: string;
+    color: string;
     image: string;
     price: number;
 }

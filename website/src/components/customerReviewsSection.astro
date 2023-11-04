@@ -5,26 +5,26 @@ import CustomerReview from "./customerReview.astro";
 <div class="customer-reviews">
   <CustomerReview
     name="Elon Musk"
-    occupation="Founder of Space-X & Tesla"
-    image="/customers/elon-musk.jpeg"
+    occupation="Founder of SpaceX & Tesla"
+    image={import("../../public/customers/elon-musk.jpeg")}
     content="The Dragon's Breath juice from JuiceTopia is literal rocket fuel"
   />
   <CustomerReview
     name="Walter White"
-    image="/customers/walter-white.png"
+    image={import("../../public/customers/walter-white.png")}
     occupation="Teacher"
     content="I take a Watermelon Wave juice from JuiceTopia in the morning to get ready to teach students"
   />
   <CustomerReview
     name="Magnus Carlsen"
     occupation="Professional Chess Player"
-    image="/customers/magnus-carlsen.jpeg"
+    image={import("../../public/customers/magnus-carlsen.jpeg")}
     content="After a long chess match I drink a juice from JuiceTopia to relax"
   />
   <CustomerReview
     name="The Rock"
     occupation="Hollywood Actor"
-    image="/customers/the-rock.jpeg"
+    image={import("../../public/customers/the-rock.jpeg")}
     content="East or West, JuiceTopia is the best"
   />
 </div>

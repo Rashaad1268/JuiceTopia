@@ -3,7 +3,7 @@ import logoImage from "../../public/logo.png";
 import { Image } from "astro:assets";
 ---
 
-<nav class="sticky top-0 bg-neutral-800 z-[9999] rounded-xl shadow-xl -mb-3 mt-3 mx-[5px]">
+<nav>
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <div
@@ -46,6 +46,9 @@ import { Image } from "astro:assets";
 </nav>
 
 <style>
+  nav {
+    @apply sticky top-0 bg-neutral-800 z-[9999] rounded-xl shadow-xl -mb-3 mt-3 mx-[5px];
+  }
   .nav-links {
     @apply flex space-x-5;
   }

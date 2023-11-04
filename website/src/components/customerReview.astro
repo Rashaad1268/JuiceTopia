@@ -1,9 +1,10 @@
 ---
+import { Image } from "astro:assets";
 const { image, content, name, occupation } = Astro.props;
 ---
 
 <figure class="flex rounded-lg bg-neutral-800 pt-0 lg:w-[470px]">
-  <img src={image} alt={name} />
+  <Image src={image} alt={name} />
 
   <div class="review-body">
     <blockquote class="text-lg mb-2">"{content}"</blockquote>

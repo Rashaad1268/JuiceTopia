@@ -11,10 +11,13 @@
     {#each juices as juice (juice.id)}
         <div class="juice-card">
             <img class="juice-image" src={juice.image} alt={juice.name}>
-            <h3 class="text-xl mt-3 mb-4 font-medium">{juice.name}</h3>
+            <h3 class="text-xl mt-3 mb-4 font-medium" style="color: {juice.color};">{juice.name}</h3>
             <p class="max-w-[80%] max-h-[48px] text-left overflow-y-hidden mb-4">{trimText(juice.description)}...</p>
 
-            <p>Rs. {juice.price}</p>
+            <div class="flex justify-around w-full">
+                <p>Rs. {juice.price}</p>
+                <button class="buy-btn">Buy</button>
+            </div>
         </div>
     {/each}
 </div>
@@ -34,5 +37,9 @@
 
     .juice-image {
         @apply w-max aspect-square object-cover rounded-xl;
+    }
+
+    .buy-btn {
+        /* @apply pl-5; */
     }
 </style>

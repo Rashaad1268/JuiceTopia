@@ -18,4 +18,6 @@ The source code is in the `/website` folder
 
 Setup instructions are in the [`website/README.md`](website/README.md) file
 
-# Citations
+## Citations
+
+Images taken from https://unsplash.com/ 
