@@ -3,21 +3,41 @@ import CustomerReview from "./customerReview.astro";
 ---
 
 <div class="customer-reviews">
-    <CustomerReview name="Micheal Jordan" content="East or West, JuiceTopia is the best" occupation="Professional Basketball Player" image="/customers/micheal-jordan.jpeg" />
-    <CustomerReview name="The Rock" content="East or West, JuiceTopia is the best" occupation="Hollywood Actor" image="/customers/the-rock.jpeg" />
-    <CustomerReview name="Elon Musk" content="East or West, JuiceTopia is the best" occupation="Engineer" image="/customers/elon-musk.jpeg" />
-    <CustomerReview name="Magnus Carlsen" content="East or West, JuiceTopia is the best" occupation="Professional Chess Player" image="/customers/magnus-carlsen.jpeg" />
+  <CustomerReview
+    name="Elon Musk"
+    occupation="Founder of Space-X & Tesla"
+    image="/customers/elon-musk.jpeg"
+    content="The Dragon's Breath juice from JuiceTopia is literal rocket fuel"
+  />
+  <CustomerReview
+    name="Magnus Carlsen"
+    occupation="Professional Chess Player"
+    image="/customers/magnus-carlsen.jpeg"
+    content="After a long chess match I drink a juice from JuiceTopia to relax"
+  />
+  <CustomerReview
+    name="Walter White"
+    image="/customers/walter-white.png"
+    occupation="Teacher"
+    content="I take a Watermelon Wave juice from JuiceTopia in the morning to get ready to teach students"
+  />
+  <CustomerReview
+    name="The Rock"
+    occupation="Hollywood Actor"
+    image="/customers/the-rock.jpeg"
+    content="East or West, JuiceTopia is the best"
+  />
 </div>
 
 <style>
-    .customer-reviews {
-        @apply flex gap-2 flex-wrap justify-evenly gap-y-4 m-4;
-    }
+  .customer-reviews {
+    @apply flex gap-2 flex-wrap justify-evenly gap-y-4 m-4;
+  }
 
-    /* If the screen width is 1080px or smaller */
-    @media (min-width: 1080px) {
-        .customer-reviews {
-            @apply justify-evenly;
-        }
+  /* If the screen width is 1080px or smaller */
+  @media (min-width: 1080px) {
+    .customer-reviews {
+      @apply justify-evenly;
     }
+  }
 </style>
