@@ -8,10 +8,10 @@
 
   <nav>
     <header class="footer-title">Team Members</header>
-    <a href="/" class="footer-link">Aditha Geeganage</a>
-    <a href="/" class="footer-link">Dasindu Suwahas</a>
-    <a href="/" class="footer-link">Thavindu Muthumala</a>
-    <a href="/" class="footer-link">Rashaad Akbar</a>
+    <a href="/">Aditha Geeganage</a>
+    <a href="/">Dasindu Suwahas</a>
+    <a href="/">Thavindu Muthumala</a>
+    <a href="/">Rashaad Akbar</a>
   </nav>
 
   <nav>
@@ -19,7 +19,6 @@
     <a
       href="https://github.com/Rashaad1268/JuiceTopia"
       target="_blank"
-      class="footer-link"
       >Source code
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"
         ><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -28,6 +27,10 @@
         ></path></svg
       >
     </a>
+
+    <a href="https://unsplash.com/" target="_blank"
+      >Images taken from unsplash</a
+    >
   </nav>
 </footer>
 
@@ -45,11 +48,11 @@
     @apply mb-2 font-bold uppercase opacity-50;
   }
 
-  .footer-link {
+  nav > a {
     @apply flex items-center gap-1 hover:underline;
   }
 
-  .footer-link > svg {
+  nav > a > svg {
     @apply h-4 w-4 fill-white;
   }
 
