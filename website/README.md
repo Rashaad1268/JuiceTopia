@@ -1,6 +1,6 @@
 # Software requirements
 
-- Install Node.js from [here](https://nodejs.org/en/download/current)
+- Install Node.js from [here](https://nodejs.org/en/download/current) **(required)**
 - Install git from [here](https://git-scm.com/downloads) (git is needed to download the source code)
 
 # Setup instructions
