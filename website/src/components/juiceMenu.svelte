@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { createOrder } from "../lib/orders";
     import {juices} from "../lib/data";
 
     function trimText(text: string) {
@@ -16,7 +17,10 @@
 
             <div class="flex justify-around w-full">
                 <p>Rs. {juice.price}</p>
-                <button class="buy-btn">Buy</button>
+                <button
+                on:click={() => {}}
+                class="buy-btn"
+                style="--btn-color: {juice.color};">Buy</button>
             </div>
         </div>
     {/each}
@@ -40,6 +44,20 @@
     }
 
     .buy-btn {
-        /* @apply pl-5; */
+		@apply font-semibold capitalize border
+               w-auto text-lg rounded-md
+               h-9 px-4 py-2 flex select-none
+               items-center justify-center;
+
+		color: var(--btn-color);
+        background-color: transparent;
+        border: 1px solid var(--btn-color);
+
+        transition: background-color 0.17s ease, color 0.17s ease;
+    }
+
+    .buy-btn:hover {
+        background-color: var(--btn-color);
+        color: white;
     }
 </style>

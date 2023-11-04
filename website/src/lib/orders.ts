@@ -46,7 +46,7 @@ export function getJuiceFromId(juiceId: number) {
     }
 }
 
-export function addOrder(newOrder: JuiceOrderInterface) {
+export function createOrder(newOrder: JuiceOrderInterface) {
     const orders = getOrders(); // Get the existing orders of the user
 
     // Add the new order to the list of exsiting orders
