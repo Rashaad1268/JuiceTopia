@@ -28,26 +28,34 @@ JuiceTopia is your one-stop shop for all things juicy, refreshing, and healthy.
     <ViewTransitions />
   </head>
   <body>
-	<NavBar />
-    <slot />
-	<Footer />
-  </body>
+    <NavBar />
   
-  <style is:global>
-	html {
-		scroll-behavior: smooth;
-	}
+      <main class="min-h-screen">
+        <!-- Website content -->
+        <slot />
+      </main>
+  
+    <Footer />
+    <style is:global>
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      @apply bg-neutral-900 text-stone-100;
-    }
+      body {
+        @apply bg-neutral-900 text-stone-100;
+      }
 
-    @font-face {
-      font-family: "Agbalumo";
-      src: url("/fonts/Agbalumo-Regular.ttf");
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-  </style>
+      .title-text {
+        @apply text-4xl md:text-5xl lg:text-6xl font-semibold mt-[14vh];
+      }
+
+      @font-face {
+        font-family: "Agbalumo";
+        src: url("/fonts/Agbalumo-Regular.ttf");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+  </body>
 </html>

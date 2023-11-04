@@ -49,9 +49,17 @@ export function getJuiceFromId(juiceId: number) {
 export function createOrder(newOrder: JuiceOrderInterface) {
     const orders = getOrders(); // Get the existing orders of the user
 
+    // If the order with the given juiceId already exists, the .findIndex function will return its index
+    // But if it does not exist the function will return -1
+    const doesOrderAlreadyExist = orders.findIndex((order) => order.juiceId == newOrder.juiceId);
+
+    // If the order with the given juiceId already exists then don't create a new one
+    if (doesOrderAlreadyExist !== -1) {
+        return
+    }
+
     // Add the new order to the list of exsiting orders
     orders.push(newOrder);
-    console.log('orders', newOrder)
 
     // Update the localStorage
     localStorage['orders'] = JSON.stringify(orders);

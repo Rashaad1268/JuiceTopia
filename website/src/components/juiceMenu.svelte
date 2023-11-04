@@ -19,13 +19,12 @@
         {trimText(juice.description)}...
       </p>
 
-      <div class="flex justify-around w-full">
-        <p>Rs. {juice.price}</p>
+      <div class="flex justify-around items-center w-full">
+        <span class="font-bold">Rs. {juice.price}</span>
         <button
           on:click={() => createOrder({ quantity: 1, juiceId: juice.id })}
           class="buy-btn"
-          style="--btn-color: {juice.color};">Buy</button
-        >
+          style="--btn-color: {juice.color};">Buy</button>
       </div>
     </div>
   {/each}
@@ -50,9 +49,12 @@
 
   .buy-btn {
     @apply font-semibold capitalize border
-               w-auto text-lg rounded-md
-               h-9 px-10 py-2 flex select-none
-               items-center justify-center;
+           w-auto text-lg rounded-md 
+           h-9 px-10 py-2 flex select-none
+           items-center justify-center;
+    background-color: var(--btn-color);
+    border: none;
+    color: white;
 
     transition: background-color 0.17s ease, color 0.17s ease;
   }

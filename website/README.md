@@ -7,7 +7,7 @@
 
 1. Open the terminal
 
-2. Run `git clone https://github.com/Rashaad1268/JuiceTopia.git` in order to clone this repository
+2. Run `git clone https://github.com/Rashaad1268/JuiceTopia.git` in order to clone this repository (if you have not already done it)
 
 3. Run `cd JuiceTopia/website`
 

@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import OrdersGrid from "../components/ordersGrid.svelte"
+---
+
+<Layout title="Your orders">
+    <h1 class="title-text ml-6 mb-8">Your orders</h1>
+
+    <OrdersGrid client:only="svelte" />
+</Layout>
+
+<style>
+
+</style>

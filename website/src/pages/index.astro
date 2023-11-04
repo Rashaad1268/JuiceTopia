@@ -5,7 +5,6 @@ import CustomerReviews from "../components/customerReviewsSection.astro"
 ---
 
 <Layout title="Welcome to JuiceTopia">
-  <main>
     <section
       class="bg-image text-shadow font-agbalumo text-center"
       style="background-image: url('/intro-bg-image.jpeg');"
@@ -23,16 +22,11 @@ import CustomerReviews from "../components/customerReviewsSection.astro"
 		<h1 class="title-text ml-5 mb-8" id="reviews">Customer Reviews</h1>
 		<CustomerReviews />
 	</section>
-  </main>
 </Layout>
 
 <style>
   section {
     @apply min-h-[80vh] flex flex-col md:px-4;
-  }
-
-  .title-text {
-    @apply text-4xl md:text-5xl lg:text-6xl font-semibold mt-[14vh];
   }
 
   .bg-image {
