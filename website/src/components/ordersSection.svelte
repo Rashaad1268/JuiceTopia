@@ -17,7 +17,10 @@
   }
 
   function changeOrderQuantity(juiceId: number, newQuantity: number) {
-    orders = updateOrderQuantity(juiceId, newQuantity);
+    // Make sure that the quantity is not negative
+    const updatedQuantity = newQuantity > 0 ? newQuantity : 1;
+
+    orders = updateOrderQuantity(juiceId, updatedQuantity);
   }
 </script>
 
