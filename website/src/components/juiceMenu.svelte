@@ -1,16 +1,27 @@
 <script lang="ts">
-  import { createOrder } from "../lib/orders";
   import { juices } from "../lib/data";
+  import JuiceDialog from "./juiceDialog.svelte";
+  import type { JuiceInterface } from "../lib/types";
+  import JuiceBuyButton from "./juiceBuyButton.svelte";
 
   function trimText(text: string) {
     /* Trims down text to the first 57 characters */
     return text.substring(0, 57) + "...";
   }
+
+  let selectedJuice: JuiceInterface = juices[0];
+  let isJuiceDialogOpen = false;
 </script>
 
 <div class="juice-menu-grid">
   {#each juices as juice (juice.id)}
-    <div class="juice-card">
+    <button
+      class="juice-card"
+      on:click={() => {
+        selectedJuice = juice;
+        isJuiceDialogOpen = true;
+      }}
+    >
       <img class="juice-image" src={juice.image} alt={juice.name} />
       <h3 class="text-xl mt-3 mb-4 font-medium" style=";">
         {juice.name}
@@ -21,14 +32,13 @@
 
       <div class="flex justify-around items-center w-full">
         <span class="font-bold">Rs. {juice.price}</span>
-        <button
-          on:click={() => createOrder({ quantity: 1, juiceId: juice.id })}
-          class="buy-btn"
-          style="--btn-color: {juice.color};">Buy</button>
+        <JuiceBuyButton juice={juice} />
       </div>
-    </div>
+    </button>
   {/each}
 </div>
+
+<JuiceDialog bind:juice={selectedJuice} bind:isOpen={isJuiceDialogOpen} />
 
 <style lang="postcss">
   .juice-menu-grid {
@@ -45,31 +55,5 @@
 
   .juice-image {
     @apply w-max aspect-square object-cover rounded-xl;
-  }
-
-  .buy-btn {
-    @apply font-semibold capitalize border
-           w-auto text-lg rounded-lg 
-           h-9 px-10 py-2 flex select-none
-           items-center justify-center;
-    background-color: var(--btn-color);
-    border: none;
-    color: white;
-
-    transition: background-color 0.17s ease, color 0.17s ease;
-  }
-
-  @media (hover: hover) {
-    /* If the device supports hovering elements, add an extra effect to the button */
-    .buy-btn {
-      color: var(--btn-color);
-      background-color: transparent;
-      border: 1px solid var(--btn-color);
-    }
-
-    .buy-btn:hover {
-      background-color: var(--btn-color);
-      color: white;
-    }
   }
 </style>

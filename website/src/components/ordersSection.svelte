@@ -2,25 +2,32 @@
   import OrdersTable from "./ordersTable.svelte";
   import { getOrders, deleteOrder, updateOrderQuantity } from "../lib/orders";
   import { orderCreateNotifier } from "../lib/stores";
+  import type { JuiceOrderInterface } from "../lib/types";
 
   let orders = getOrders();
+
+  function sortOrders(array: Array<JuiceOrderInterface>) {
+    // Sort the orders by juiceId, in descending order
+    return array.sort((a: any, b: any) => b.juiceId-a.juiceId);
+  }
 
   orderCreateNotifier.subscribe((newOrder) => {
     if (Boolean(newOrder)) {
       // If the newOrder is a truthy value, add it to the list of orders
-      orders = [newOrder!, ...orders];
+      // Sort the orders by the juiceId
+      orders = sortOrders([newOrder!, ...orders]);
     }
   });
 
   function removeOrder(juiceId: number) {
-    orders = deleteOrder(juiceId);
+    orders = sortOrders(deleteOrder(juiceId));
   }
 
   function changeOrderQuantity(juiceId: number, newQuantity: number) {
     // Make sure that the quantity is not negative
     const updatedQuantity = newQuantity > 0 ? newQuantity : 1;
 
-    orders = updateOrderQuantity(juiceId, updatedQuantity);
+    orders = sortOrders(updateOrderQuantity(juiceId, updatedQuantity));
   }
 </script>
 

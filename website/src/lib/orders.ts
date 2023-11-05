@@ -12,7 +12,7 @@ export function getOrders(): Array<JuiceOrderInterface> {
 
     if (ordersJson !== undefined) {
         try {
-            // Invalid JSON has been set
+            // Return the JSON
             return JSON.parse(ordersJson);
         } catch (error) {
             // In case of invalid JSON
