@@ -17,7 +17,6 @@
     >
       <tr>
         <th>Juice Name</th>
-        <!-- Hide the price column if the table cell is too small -->
         <th>Price (Rs)</th>
         <th>Quantity</th>
         <th>Total (Rs)</th>
