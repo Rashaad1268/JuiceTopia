@@ -1,4 +1,5 @@
 import { juices } from "./data";
+import { orderCreateNotifier } from "./stores";
 import type { JuiceOrderInterface } from "./types";
 
 
@@ -63,6 +64,25 @@ export function createOrder(newOrder: JuiceOrderInterface) {
 
     // Update the localStorage
     localStorage['orders'] = JSON.stringify(orders);
+
+    orderCreateNotifier.set(newOrder); // Notify the UI that a new order is created
+}
+
+export function deleteOrder(juiceId: number) {
+    const orders = getOrders();
+
+    // Get the order from the array
+    const orderIndex = orders.findIndex((order) => order.juiceId == juiceId);
+
+    // If the order exists, delete it
+    if (orderIndex !== -1) {
+        orders.splice(orderIndex, 1); // Remove the order
+
+        // Update the localStorage
+        localStorage['orders'] = JSON.stringify(orders);
+    }
+
+    return orders;
 }
 
 export function updateOrderQuantity(juiceId: number, newQuantity: number) {

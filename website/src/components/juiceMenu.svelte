@@ -3,8 +3,8 @@
   import { juices } from "../lib/data";
 
   function trimText(text: string) {
-    /* Trims down text to the first 60 characters */
-    return text.substring(0, 60);
+    /* Trims down text to the first 57 characters */
+    return text.substring(0, 57) + "...";
   }
 </script>
 
@@ -16,7 +16,7 @@
         {juice.name}
       </h3>
       <p class="max-w-[80%] max-h-[48px] text-left overflow-y-hidden mb-4">
-        {trimText(juice.description)}...
+        {trimText(juice.description)}
       </p>
 
       <div class="flex justify-around items-center w-full">
@@ -49,7 +49,7 @@
 
   .buy-btn {
     @apply font-semibold capitalize border
-           w-auto text-lg rounded-md 
+           w-auto text-lg rounded-lg 
            h-9 px-10 py-2 flex select-none
            items-center justify-center;
     background-color: var(--btn-color);
