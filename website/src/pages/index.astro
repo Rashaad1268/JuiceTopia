@@ -1,36 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import JuiceMenu from "../components/juiceMenu.svelte"
-import CustomerReviews from "../components/customerReviewsSection.astro"
+import JuiceMenu from "../components/juiceMenu.svelte";
+import CustomerReviews from "../components/customerReviewsSection.astro";
 import OrdersGrid from "../components/ordersSection.svelte";
+import AboutUsSection from "../components/aboutUsSection.astro";
 ---
 
 <Layout title="Welcome to JuiceTopia">
-    <section
-      class="bg-image text-shadow font-agbalumo text-center"
-      style="background-image: url('/intro-bg-image.jpeg');"
-    >
-      <h1 id="introduction" class="title-text">Welcome to JuiceTopia</h1>
-      <h2 class="text-2xl">Your Juice Paradise</h2>
-    </section>
+  <section
+    class="bg-image text-shadow font-agbalumo text-center"
+    style="background-image: url('/intro-bg-image.jpeg');"
+  >
+    <h1 id="introduction" class="title-text">Welcome to JuiceTopia</h1>
+    <h2 class="text-2xl">Your Juice Paradise</h2>
+  </section>
 
-    <section>
-      <h1 class="title-text text-center mb-14" id="menu">Menu</h1>
-  	  <JuiceMenu client:load />
-    </section>
+  <section>
+    <h1 class="title-text text-center mb-14" id="menu">Menu</h1>
+    <JuiceMenu client:load />
+  </section>
 
-    <section>
-      <h1 class="title-text ml-6 mb-8" id="orders">Your orders</h1>
+  <section>
+    <h1 class="title-text ml-6 mb-8" id="orders">Your orders</h1>
 
-      <div class="mx-6">
-        <OrdersGrid client:only="svelte" />
-      </div>
-    </section>
+    <div class="mx-6">
+      <OrdersGrid client:only="svelte" />
+    </div>
+  </section>
 
-	<section>
-		<h1 class="title-text ml-5 mb-8" id="reviews">Customer Reviews</h1>
-		<CustomerReviews />
-	</section>
+  <section>
+    <h1 class="title-text ml-5 mb-8" id="reviews">Customer Reviews</h1>
+    <CustomerReviews />
+  </section>
+
+  <section class="mx-5">
+    <h1 class="title-text mb-8" id="about-us">About Us</h1>
+
+    <AboutUsSection />
+  </section>
 </Layout>
 
 <style>

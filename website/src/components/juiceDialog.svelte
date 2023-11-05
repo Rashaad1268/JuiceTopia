@@ -2,6 +2,7 @@
   import type { JuiceInterface } from "../lib/types";
   import JuiceBuyButton from "./juiceBuyButton.svelte";
 
+  // A variable indicated whether the dialog is open
   export let isOpen: boolean = false;
   export let juice: JuiceInterface;
 
@@ -60,10 +61,12 @@
       <div>
         <h1 class="text-2xl font-semibold">{juice.name}</h1>
         <h3 class="font-medium text-lg mb-4 md:mb-6">Rs. {juice.price}</h3>
-        <p class="text-sm sm:text-base">{juice.description}</p>
+        <p class="text-sm sm:text-base" style="text-wrap: balance;">
+          {juice.description}
+        </p>
       </div>
 
-      <JuiceBuyButton class="my-4" {juice} />
+      <JuiceBuyButton class="my-4" onClick={() => (isOpen = false)} {juice} />
     </div>
   </div>
 </dialog>

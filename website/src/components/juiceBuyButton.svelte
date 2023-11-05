@@ -3,17 +3,23 @@
   import type { JuiceInterface } from "../lib/types";
 
   export let juice: JuiceInterface;
+  export let onClick: Function = () => {};
 </script>
 
-<button
-  on:click={(event) => {
-    event.stopPropagation();
+<a href="/#orders" class="contents"
+  ><button
+    on:click={(event) => {
+      event.stopPropagation();
 
-    // Create a new order when the button is click
-    createOrder({ quantity: 1, juiceId: juice.id });
-  }}
-  class="{$$restProps.class} juice-buy-btn"
-  style="--btn-color: {juice.color};">Buy</button
+      // Create a new order when the button is click
+      createOrder({ quantity: 1, juiceId: juice.id });
+
+      // Call the onClick callback function which is passed in
+      onClick();
+    }}
+    class="{$$restProps.class || ''} juice-buy-btn"
+    style="--btn-color: {juice.color};">Buy</button
+  ></a
 >
 
 <style lang="postcss">
@@ -22,7 +28,7 @@
     @apply font-semibold capitalize border
            w-auto text-lg rounded-lg 
            h-9 px-10 py-2 flex select-none
-           items-center justify-center;
+           items-center justify-center focus:outline-none;
     background-color: var(--btn-color);
     border: none;
     color: white;

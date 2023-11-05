@@ -26,13 +26,16 @@
       <h3 class="text-xl mt-3 mb-4 font-medium" style=";">
         {juice.name}
       </h3>
-      <p class="max-w-[80%] max-h-[48px] text-left overflow-y-hidden mb-4">
+      <p
+        class="max-w-[80%] max-h-[48px] text-center overflow-y-hidden mb-4"
+        
+      >
         {trimText(juice.description)}
       </p>
 
       <div class="flex justify-around items-center w-full">
         <span class="font-bold">Rs. {juice.price}</span>
-        <JuiceBuyButton juice={juice} />
+        <JuiceBuyButton {juice} />
       </div>
     </button>
   {/each}
