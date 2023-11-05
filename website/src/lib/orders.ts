@@ -98,4 +98,6 @@ export function updateOrderQuantity(juiceId: number, newQuantity: number) {
         // Update the localStorage
         localStorage['orders'] = JSON.stringify(orders);
     }
+
+    return orders;
 }

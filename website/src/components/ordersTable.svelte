@@ -3,8 +3,8 @@
   import type { JuiceOrderInterface } from "../lib/types";
 
   export let orders: Array<JuiceOrderInterface>;
-  export let deleteOrder: (arg0: number) => void;
-  export let updateOrderQuantity: (
+  export let removeOrder: (arg0: number) => void;
+  export let changeOrderQuantity: (
     juiceId: number,
     newQuantity: number
   ) => void;
@@ -12,7 +12,9 @@
 
 <div class="rounded-md overflow-x-scroll">
   <table class="w-full rounded-md">
-    <thead class="text-xs uppercase bg-neutral-800 text-gray-400">
+    <thead
+      class="text-xs uppercase whitespace-nowrap bg-neutral-800 text-gray-400"
+    >
       <tr>
         <th>Juice Name</th>
         <!-- Hide the price column if the table cell is too small -->
@@ -29,15 +31,28 @@
           <th class="px-6 py-4 font-medium whitespace-nowrap text-white">
             {juice.name}
           </th>
-          <!-- Hide the price column if the table cell is too small -->
-          <td class="">{juice.price}</td>
-          <td>{order.quantity}</td>
+          <td>{juice.price}</td>
+          <td>
+            <div class="flex gap-2 sm:gap-4 justify-center items-center">
+              <button
+                class="update-order-quantity-btn"
+                on:click={() =>
+                  changeOrderQuantity(juice.id, order.quantity + 1)}>+</button
+              >
+              <span>{order.quantity}</span>
+              <button
+                class="update-order-quantity-btn"
+                on:click={() =>
+                  changeOrderQuantity(juice.id, order.quantity - 1)}>-</button
+              >
+            </div>
+          </td>
           <td>{juice.price * order.quantity}</td>
           <td class=""
             ><button
               aria-label="Delete order"
               class="p-1"
-              on:click={() => deleteOrder(order.juiceId)}
+              on:click={() => removeOrder(order.juiceId)}
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-4 w-4 fill-red-600"
@@ -88,5 +103,14 @@
 
   .body-cell {
     @apply border-b bg-neutral-700 border-neutral-600;
+  }
+
+  .update-order-quantity-btn {
+    @apply font-semibold capitalize
+      bg-zinc-800 text-xs rounded-md
+        h-8 w-8 px-2 sm:px-4 py-2 hover:bg-zinc-900
+        flex items-center justify-center select-none;
+
+    transition: background-color 0.17s ease, color 0.17s ease;
   }
 </style>

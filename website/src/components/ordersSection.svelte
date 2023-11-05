@@ -1,6 +1,6 @@
 <script lang="ts">
   import OrdersTable from "./ordersTable.svelte";
-  import { getJuiceFromId, getOrders, deleteOrder } from "../lib/orders";
+  import { getOrders, deleteOrder, updateOrderQuantity } from "../lib/orders";
   import { orderCreateNotifier } from "../lib/stores";
 
   let orders = getOrders();
@@ -15,6 +15,10 @@
   function removeOrder(juiceId: number) {
     orders = deleteOrder(juiceId);
   }
+
+  function changeOrderQuantity(juiceId: number, newQuantity: number) {
+    orders = updateOrderQuantity(juiceId, newQuantity);
+  }
 </script>
 
 <button
@@ -27,7 +31,7 @@
 >
 
 <div class="orders-grid">
-  <OrdersTable bind:orders deleteOrder={removeOrder} />
+  <OrdersTable bind:orders removeOrder={removeOrder} changeOrderQuantity={changeOrderQuantity} />
 </div>
 
 <style lang="postcss">
