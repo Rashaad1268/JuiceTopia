@@ -6,6 +6,8 @@
 
 ## Website link: [JuiceTopia](https://juice-topia.vercel.app/)
 
+## Disclaimer: Please use the Google Chrome browser for the best experience. Some features of the website do not work on Safari
+
 ## Setting up the project
 
 ### Software requirements
