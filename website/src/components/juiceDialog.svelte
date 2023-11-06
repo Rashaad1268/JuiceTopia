@@ -47,7 +47,6 @@
   class:open={isOpen}
   on:cancel|preventDefault={() => (isOpen = false)}
 >
-  <!-- Have an inner div so outside clicks can be detected -->
   <div bind:this={dialogContent} class="dialog-content">
     <img
       class="w-52 sm:w-64 md:w-72 mx-auto mb-3 md:mb-0 rounded-lg"
@@ -66,28 +65,40 @@
         </p>
       </div>
 
-      <JuiceBuyButton class="my-4" onClick={() => (isOpen = false)} {juice} />
+      <JuiceBuyButton
+        class="my-4"
+        onClick={() => {
+          // Close the dialog when the buy button is clicked
+          isOpen = false;
+        }}
+        {juice}
+      />
     </div>
   </div>
 </dialog>
 
 <style lang="postcss">
   dialog {
+    /* Dialog styles when it is closed */
     @apply opacity-0 rounded-xl -translate-y-3 bg-neutral-950 text-white
 			   transition-all duration-[250ms];
   }
   dialog.open {
+    /* Dialog styles when it is open */
     @apply opacity-100 translate-y-0 scale-100;
   }
   dialog::backdrop {
+    /* Styles for the background of the dialog */
     @apply opacity-0 transition-opacity duration-[250ms]
 		     bg-neutral-900; /* The actual color of the backdrop */
   }
+  dialog.open::backdrop {
+    /* Dialog background styles when the dialog is open */
+    @apply opacity-50;
+  }
+
   .dialog-content {
     @apply flex flex-col md:flex-row mx-8 my-6 md:mx-16 md:my-10 gap-2
-                max-w-[450px] sm:max-w-[600px] max-h-[70vh];
-  }
-  dialog.open::backdrop {
-    @apply opacity-50;
+              max-w-[450px] sm:max-w-[600px] max-h-[70vh];
   }
 </style>

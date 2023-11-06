@@ -8,7 +8,7 @@
 
   function sortOrders(array: Array<JuiceOrderInterface>) {
     // Sort the orders by juiceId, in descending order
-    return array.sort((a: any, b: any) => b.juiceId-a.juiceId);
+    return array.sort((a: any, b: any) => b.juiceId - a.juiceId);
   }
 
   orderCreateNotifier.subscribe((newOrder) => {
@@ -41,7 +41,7 @@
 >
 
 <div class="orders-grid">
-  <OrdersTable bind:orders removeOrder={removeOrder} changeOrderQuantity={changeOrderQuantity} />
+  <OrdersTable bind:orders {removeOrder} {changeOrderQuantity} />
 </div>
 
 <style lang="postcss">

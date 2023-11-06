@@ -16,7 +16,7 @@ JuiceTopia is your one-stop shop for all things juicy, refreshing, and healthy.
 `.trim();
 ---
 
-<!doctype html>
+<!-- This is the common layout which every page of the project will use --><!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,14 +29,16 @@ JuiceTopia is your one-stop shop for all things juicy, refreshing, and healthy.
   </head>
   <body>
     <NavBar />
-  
-      <main class="min-h-screen">
-        <!-- Website content -->
-        <slot />
-      </main>
-  
+
+    <main class="min-h-screen">
+      <!-- Website content -->
+      <slot />
+    </main>
+
     <Footer />
+
     <style is:global>
+      /* Global styles */
       html {
         scroll-behavior: smooth;
       }
@@ -50,6 +52,7 @@ JuiceTopia is your one-stop shop for all things juicy, refreshing, and healthy.
       }
 
       @font-face {
+        /* Custom font */
         font-family: "Agbalumo";
         src: url("/fonts/Agbalumo-Regular.ttf");
         font-weight: normal;

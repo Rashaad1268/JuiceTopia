@@ -10,7 +10,8 @@
   }
 
   let selectedJuice: JuiceInterface = juices[0];
-  let isJuiceDialogOpen = false;
+
+  let isJuiceDialogOpen = false; // To indicate whether the juice dialog is open
 </script>
 
 <div class="juice-menu-grid">
@@ -26,10 +27,7 @@
       <h3 class="text-xl mt-3 mb-4 font-medium" style=";">
         {juice.name}
       </h3>
-      <p
-        class="max-w-[80%] max-h-[48px] text-center overflow-y-hidden mb-4"
-        
-      >
+      <p class="max-w-[80%] max-h-[48px] text-center overflow-y-hidden mb-4">
         {trimText(juice.description)}
       </p>
 
@@ -45,6 +43,7 @@
 
 <style lang="postcss">
   .juice-menu-grid {
+    /* Use a grid layout for the menu */
     @apply grid gap-8 gap-x-6 md:gap-x-14 overflow-y-auto justify-center;
     max-width: 100%;
 

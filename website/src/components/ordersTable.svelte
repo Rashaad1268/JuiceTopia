@@ -10,6 +10,7 @@
   ) => void;
 </script>
 
+<!-- The table which lists out all of the users orders -->
 <div class="rounded-md overflow-x-scroll">
   <table class="w-full rounded-md">
     <thead
@@ -52,7 +53,9 @@
               aria-label="Delete order"
               class="p-1"
               on:click={() => removeOrder(order.juiceId)}
-              ><svg
+            >
+              <!-- Trash can icon -->
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-4 w-4 fill-red-600"
                 viewBox="0 0 448 512"
@@ -85,6 +88,7 @@
   </table>
 
   {#if orders.length === 0}
+    <!-- If the orders array is empty, show that the user does not have any orders -->
     <h3 class="font-bold text-xl p-4 text-center">
       You have not ordered any drinks
     </h3>
@@ -106,9 +110,9 @@
 
   .update-order-quantity-btn {
     @apply font-semibold capitalize
-      bg-zinc-800 text-xs rounded-md
-        h-8 w-8 px-2 sm:px-4 py-2 hover:bg-zinc-900
-        flex items-center justify-center select-none;
+         bg-zinc-800 text-xs rounded-md
+           h-8 w-8 px-2 sm:px-4 py-2 hover:bg-zinc-900
+           flex items-center justify-center select-none;
 
     transition: background-color 0.17s ease, color 0.17s ease;
   }

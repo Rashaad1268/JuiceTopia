@@ -1,5 +1,5 @@
 /*
-    This file contains all of the juices and realted data
+    This file contains all of the juice related data
 */
 
 import type { JuiceInterface } from "./types"
@@ -14,7 +14,7 @@ export const juices: Array<JuiceInterface> = [
         milk, nuts, and ice blended to perfection. It's the perfect way to start your day
         or cool down on a hot afternoon.`.trim(),
         image: '/juices/banana_smoothie.png',
-        price: 400,
+        price: 350,
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ export const juices: Array<JuiceInterface> = [
         fresh dragon fruit, berries, and ice blended to perfection.
         It's the perfect way to start your day or cool down on a hot afternoon.`.trim(),
         image: '/juices/dragon_fruit_and_berries.png',
-        price: 450,
+        price: 550,
     },
     {
         id: 3,
@@ -36,7 +36,7 @@ export const juices: Array<JuiceInterface> = [
         milk, and ice blended to perfection. Savor the sweet and fruity taste of mango, and feel
         the sunshine on your face with every sip.`.trim(),
         image: '/juices/mango_juice.png',
-        price: 450,
+        price: 370,
     },
     {
         id: 4,
@@ -47,7 +47,7 @@ export const juices: Array<JuiceInterface> = [
         and ice blended to perfection. Enjoy the sweet and tangy taste of orange, and
         feel the energy boost with every sip.`.trim(),
         image: '/juices/orange_juice.png',
-        price: 450,
+        price: 425,
     },
     {
         id: 5,
@@ -58,7 +58,7 @@ export const juices: Array<JuiceInterface> = [
         milk, and ice blended to perfection. Enjoy the sweet and tart taste of pomegranate,
         and feel the energy boost with every sip.`.trim(),
         image: '/juices/pomegranate_and_kiwi_juice.png',
-        price: 450,
+        price: 520,
     },
     {
         id: 6,
@@ -69,7 +69,7 @@ export const juices: Array<JuiceInterface> = [
         strawberries, club soda, and lime juice. Enjoy the sweet and tart taste of strawberry,
         and feel the bubbles tickle your nose with every sip.`.trim(),
         image: '/juices/strawberry_mocktail.png',
-        price: 450,
+        price: 575,
     },
     {
         id: 7,
@@ -80,7 +80,7 @@ export const juices: Array<JuiceInterface> = [
         blueberries, raspberries, and blackberries, milk, and ice blended to perfection.
         Enjoy the sweet and tart taste of berries, and feel the energy boost with every sip.`.trim(),
         image: '/juices/berry_juice.png',
-        price: 450,
+        price: 550,
     },
     {
         id: 8,

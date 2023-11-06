@@ -1,3 +1,7 @@
+/*
+    This file contains type definitions for juices and orders
+*/
+
 export interface JuiceInterface {
     id: number;
     name: string;
@@ -9,6 +13,6 @@ export interface JuiceInterface {
 
 
 export interface JuiceOrderInterface {
-    juiceId: number;    // Reference to the juice from its id property
+    juiceId: number;    // Reference the juice from its id property
     quantity: number;
 }
