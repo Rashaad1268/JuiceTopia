@@ -32,8 +32,6 @@
 
 - Aditha Geeganage
 - Thavindu Muthumala
-- Shazan Shafee
-- Dasindu Suwahas
 - Z. M. Akbar Rashaad
 
 ## Citations
